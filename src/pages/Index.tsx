@@ -201,70 +201,32 @@ const Index = () => {
         <section id="contact" className="py-20 px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h2>
-              <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-              <p className="text-xl text-muted-foreground">
-                Расскажите о ваших потребностях — подберём квалифицированный персонал
-              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Контакты</h2>
+              <div className="w-20 h-1 bg-primary mx-auto"></div>
             </div>
-            <Card className="p-8 md:p-12">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Ваше имя</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Иван Иванов"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="ivan@company.com"
-                    />
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="p-8 text-center">
+                <Icon name="Mail" className="mx-auto mb-4 text-primary" size={32} />
+                <div className="text-lg font-semibold mb-2">Email</div>
+                <a href="mailto:ptk.staffing@yandex.ru" className="text-muted-foreground hover:text-primary transition-colors">
+                  ptk.staffing@yandex.ru
+                </a>
+              </Card>
+              <Card className="p-8 text-center">
+                <Icon name="Phone" className="mx-auto mb-4 text-primary" size={32} />
+                <div className="text-lg font-semibold mb-2">Телефон</div>
+                <a href="tel:+79968453212" className="text-muted-foreground hover:text-primary transition-colors">
+                  +7 (996) 845-32-12
+                </a>
+              </Card>
+              <Card className="p-8 text-center">
+                <Icon name="MapPin" className="mx-auto mb-4 text-primary" size={32} />
+                <div className="text-lg font-semibold mb-2">Офис</div>
+                <div className="text-muted-foreground">
+                  Набережные Челны, ул. Академика Рубаненко, 4, оф. 455
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Компания</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Название компании"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Расскажите о проекте</label>
-                  <textarea 
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    placeholder="Какие специалисты нужны, количество, сроки, график работы..."
-                  />
-                </div>
-                <Button size="lg" className="w-full">
-                  Отправить заявку
-                </Button>
-              </form>
-              <div className="mt-12 pt-8 border-t grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <Icon name="Mail" className="mx-auto mb-2 text-primary" size={24} />
-                  <div className="text-sm font-medium mb-1">Email</div>
-                  <div className="text-sm text-muted-foreground">ptk.staffing@yandex.ru</div>
-                </div>
-                <div>
-                  <Icon name="Phone" className="mx-auto mb-2 text-primary" size={24} />
-                  <div className="text-sm font-medium mb-1">Телефон</div>
-                  <div className="text-sm text-muted-foreground">+7 (996) 845-32-12</div>
-                </div>
-                <div>
-                  <Icon name="MapPin" className="mx-auto mb-2 text-primary" size={24} />
-                  <div className="text-sm font-medium mb-1">Офис</div>
-                  <div className="text-sm text-muted-foreground">Набережные Челны, ул. Академика Рубаненко, 4, оф. 455</div>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           </div>
         </section>
       </main>
