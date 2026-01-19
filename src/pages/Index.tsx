@@ -12,7 +12,11 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary">IT Staff</div>
+            <img 
+              src="https://cdn.poehali.dev/files/photo_2025-12-15_12-15-25.png" 
+              alt="ПТК - Подбор трудовых кадров" 
+              className="h-12 object-contain"
+            />
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors">
                 Главная
@@ -38,10 +42,10 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                  Комплектуем IT-команды под ваши проекты
+                  Подбор линейного персонала для производства
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Подбираем и предоставляем опытных специалистов для усиления вашей команды разработки
+                  Обеспечиваем предприятия квалифицированными рабочими и специалистами производственных участков
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" onClick={() => scrollToSection('contact')}>
@@ -72,18 +76,18 @@ const Index = () => {
               {[
                 {
                   icon: "Users",
-                  title: "Опытные специалисты",
-                  description: "Более 500 проверенных IT-профессионалов в нашей базе"
+                  title: "Проверенные кадры",
+                  description: "Более 2000 квалифицированных рабочих в нашей базе"
                 },
                 {
-                  icon: "Zap",
-                  title: "Быстрый подбор",
-                  description: "Формируем команду под ваш проект за 5-7 дней"
+                  icon: "Clock",
+                  title: "Оперативный подбор",
+                  description: "Комплектуем смены и участки за 3-5 дней"
                 },
                 {
                   icon: "Shield",
                   title: "Гарантия качества",
-                  description: "Замена специалиста в течение 2 недель при необходимости"
+                  description: "Замена работника в течение 1 недели при необходимости"
                 }
               ].map((item, index) => (
                 <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
@@ -106,20 +110,20 @@ const Index = () => {
             </div>
             <div className="space-y-8 text-lg text-muted-foreground">
               <p className="animate-slide-in-left">
-                IT Staff — это команда профессионалов с 8-летним опытом в сфере аутстаффинга IT-специалистов. 
-                Мы помогаем компаниям масштабировать разработку, предоставляя проверенных разработчиков, 
-                тестировщиков, аналитиков и других специалистов.
+                ПТК (Подбор Трудовых Кадров) — это команда профессионалов с 10-летним опытом в сфере подбора линейного персонала. 
+                Мы помогаем производственным предприятиям найти квалифицированных рабочих: 
+                операторов станков, сборщиков, слесарей, контролёров качества и других специалистов.
               </p>
               <p className="animate-slide-in-left">
-                Наш подход основан на глубоком понимании потребностей бизнеса. Мы не просто поставляем ресурсы — 
-                мы становимся партнёром в достижении ваших целей, тщательно подбирая специалистов под 
-                технологический стек и культуру вашей команды.
+                Наш подход основан на глубоком понимании потребностей производства. Мы не просто поставляем рабочую силу — 
+                мы становимся партнёром в достижении ваших производственных показателей, тщательно отбирая кадры под 
+                специфику вашего производства и корпоративной культуры.
               </p>
               <div className="grid md:grid-cols-3 gap-8 pt-8">
                 {[
-                  { number: "500+", label: "Специалистов" },
-                  { number: "120+", label: "Реализованных проектов" },
-                  { number: "8 лет", label: "На рынке" }
+                  { number: "2000+", label: "Рабочих в базе" },
+                  { number: "300+", label: "Предприятий-клиентов" },
+                  { number: "10 лет", label: "На рынке" }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
@@ -137,38 +141,38 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Наши кейсы</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Примеры успешных проектов, где мы помогли компаниям усилить команды разработки
+                Примеры успешных проектов, где мы помогли предприятиям закрыть потребность в персонале
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  title: "Финтех-платформа",
-                  company: "FinanceFlow",
-                  description: "Усилили команду разработки мобильного банкинга 5 разработчиками React Native и 2 QA-инженерами",
-                  result: "Запуск нового продукта в срок, рост MAU на 40%",
-                  tech: ["React Native", "Node.js", "PostgreSQL"]
+                  title: "Машиностроительный завод",
+                  company: "АО Металлпром",
+                  description: "Подобрали 30 операторов станков с ЧПУ и 15 сборщиков механических узлов для запуска новой линии",
+                  result: "Запуск производства в срок, +40% к плановой мощности",
+                  tech: ["Операторы ЧПУ", "Сборщики", "Контролёры"]
                 },
                 {
-                  title: "E-commerce решение",
-                  company: "ShopMaster",
-                  description: "Предоставили команду из 8 специалистов для масштабирования платформы онлайн-торговли",
-                  result: "Увеличение производительности на 3x, обработка 10M+ транзакций/мес",
-                  tech: ["Vue.js", "Python", "Redis", "Kubernetes"]
+                  title: "Пищевое производство",
+                  company: "ООО АгроПродукт",
+                  description: "Комплектовали 3 смены (по 25 человек) для упаковочной линии с обучением на месте",
+                  result: "Выполнение плана на 120%, снижение брака до 2%",
+                  tech: ["Упаковщики", "Сортировщики", "Контроль качества"]
                 },
                 {
-                  title: "Медицинская платформа",
-                  company: "HealthTech Pro",
-                  description: "Сформировали полноценную команду разработки для создания телемедицинского сервиса с нуля",
-                  result: "MVP за 4 месяца, 50K+ активных пользователей",
-                  tech: ["React", "Django", "WebRTC", "AWS"]
+                  title: "Логистический центр",
+                  company: "Логистик Про",
+                  description: "Подбор 40 грузчиков, 10 кладовщиков и 5 операторов погрузчиков для расширения склада",
+                  result: "Увеличение оборота на 60%, сокращение времени обработки",
+                  tech: ["Грузчики", "Кладовщики", "Операторы"]
                 },
                 {
-                  title: "Логистическая система",
-                  company: "LogiTrack",
-                  description: "Комплектовали команду аналитиков и разработчиков для системы управления грузоперевозками",
-                  result: "Автоматизация 80% процессов, экономия $2M/год",
-                  tech: ["Angular", "Java", "MongoDB", "Kafka"]
+                  title: "Строительная компания",
+                  company: "СтройТех",
+                  description: "Сформировали бригаду из 20 монтажников, 8 сварщиков и 5 крановщиков для объекта",
+                  result: "Сдача объекта на 2 недели раньше срока",
+                  tech: ["Монтажники", "Сварщики", "Крановщики"]
                 }
               ].map((caseItem, index) => (
                 <Card key={index} className="p-8 hover:shadow-xl transition-all hover:-translate-y-1">
@@ -200,7 +204,7 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
               <p className="text-xl text-muted-foreground">
-                Расскажите о вашем проекте — подберём команду специалистов
+                Расскажите о ваших потребностях — подберём квалифицированный персонал
               </p>
             </div>
             <Card className="p-8 md:p-12">
@@ -236,7 +240,7 @@ const Index = () => {
                   <textarea 
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    placeholder="Какие специалисты нужны, сроки проекта, технологический стек..."
+                    placeholder="Какие специалисты нужны, количество, сроки, график работы..."
                   />
                 </div>
                 <Button size="lg" className="w-full">
@@ -247,7 +251,7 @@ const Index = () => {
                 <div>
                   <Icon name="Mail" className="mx-auto mb-2 text-primary" size={24} />
                   <div className="text-sm font-medium mb-1">Email</div>
-                  <div className="text-sm text-muted-foreground">info@itstaff.ru</div>
+                  <div className="text-sm text-muted-foreground">info@ptk-kadry.ru</div>
                 </div>
                 <div>
                   <Icon name="Phone" className="mx-auto mb-2 text-primary" size={24} />
@@ -269,9 +273,13 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-2xl font-bold mb-4">IT Staff</div>
+              <img 
+                src="https://cdn.poehali.dev/files/photo_2025-12-15_12-15-25.png" 
+                alt="ПТК" 
+                className="h-16 mb-4 object-contain"
+              />
               <p className="text-sm opacity-80">
-                Аутстаффинг IT-специалистов для вашего бизнеса
+                Подбор линейного персонала для производства
               </p>
             </div>
             <div>
@@ -285,22 +293,22 @@ const Index = () => {
             <div>
               <div className="font-semibold mb-4">Услуги</div>
               <div className="space-y-2 text-sm opacity-80">
-                <div>Аутстаффинг</div>
-                <div>Подбор команд</div>
-                <div>Консалтинг</div>
+                <div>Подбор персонала</div>
+                <div>Комплектация смен</div>
+                <div>Обучение кадров</div>
               </div>
             </div>
             <div>
               <div className="font-semibold mb-4">Контакты</div>
               <div className="space-y-2 text-sm opacity-80">
-                <div>info@itstaff.ru</div>
+                <div>info@ptk-kadry.ru</div>
                 <div>+7 (495) 123-45-67</div>
                 <div>Москва</div>
               </div>
             </div>
           </div>
           <div className="pt-8 border-t border-white/10 text-center text-sm opacity-60">
-            © 2026 IT Staff. Все права защищены.
+            © 2026 ПТК - Подбор Трудовых Кадров. Все права защищены.
           </div>
         </div>
       </footer>
