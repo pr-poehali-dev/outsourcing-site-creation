@@ -60,8 +60,8 @@ const Index = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full"></div>
                   <img 
-                    src="/placeholder.svg" 
-                    alt="IT Team" 
+                    src="https://cdn.poehali.dev/files/Аутстафф.png" 
+                    alt="Подбор линейного персонала" 
                     className="relative rounded-2xl shadow-2xl"
                   />
                 </div>
