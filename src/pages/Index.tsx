@@ -251,17 +251,17 @@ const Index = () => {
                 <div>
                   <Icon name="Mail" className="mx-auto mb-2 text-primary" size={24} />
                   <div className="text-sm font-medium mb-1">Email</div>
-                  <div className="text-sm text-muted-foreground">info@ptk-kadry.ru</div>
+                  <div className="text-sm text-muted-foreground">ptk.staffing@yandex.ru</div>
                 </div>
                 <div>
                   <Icon name="Phone" className="mx-auto mb-2 text-primary" size={24} />
                   <div className="text-sm font-medium mb-1">Телефон</div>
-                  <div className="text-sm text-muted-foreground">+7 (495) 123-45-67</div>
+                  <div className="text-sm text-muted-foreground">+7 (996) 845-32-12</div>
                 </div>
                 <div>
                   <Icon name="MapPin" className="mx-auto mb-2 text-primary" size={24} />
                   <div className="text-sm font-medium mb-1">Офис</div>
-                  <div className="text-sm text-muted-foreground">Москва, ул. Примерная, 10</div>
+                  <div className="text-sm text-muted-foreground">Набережные Челны, ул. Академика Рубаненко, 4, оф. 455</div>
                 </div>
               </div>
             </Card>
@@ -301,9 +301,9 @@ const Index = () => {
             <div>
               <div className="font-semibold mb-4">Контакты</div>
               <div className="space-y-2 text-sm opacity-80">
-                <div>info@ptk-kadry.ru</div>
-                <div>+7 (495) 123-45-67</div>
-                <div>Москва</div>
+                <div>ptk.staffing@yandex.ru</div>
+                <div>+7 (996) 845-32-12</div>
+                <div>Набережные Челны, РТ</div>
               </div>
             </div>
           </div>
