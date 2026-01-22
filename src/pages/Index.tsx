@@ -182,7 +182,7 @@ const Index = () => {
                       <img 
                         src={caseItem.image} 
                         alt={caseItem.title}
-                        className="w-full h-64 object-cover rounded-t-lg"
+                        className="w-full h-auto object-contain rounded-t-lg"
                       />
                     </div>
                   )}
