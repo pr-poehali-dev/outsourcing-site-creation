@@ -147,6 +147,14 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
+                  title: "Камский завод металлоконструкций",
+                  company: "АО «КЗМК ТЭМПО»",
+                  description: "Плодотворное и профессиональное сотрудничество в области подбора и предоставления персонала",
+                  result: "Благодарственное письмо за оперативность, гибкость и глубокое понимание потребностей",
+                  tech: ["Кадровые задачи", "Производственный персонал"],
+                  image: "https://cdn.poehali.dev/projects/758ebfc9-aa6d-4a81-b8af-37dcb486f962/bucket/7377381a-ebda-426a-9804-b4aa4ebcff3e.png"
+                },
+                {
                   title: "Машиностроительный завод",
                   company: "АО Металлпром",
                   description: "Подобрали 30 операторов станков с ЧПУ и 15 сборщиков механических узлов для запуска новой линии",
@@ -166,16 +174,18 @@ const Index = () => {
                   description: "Подбор 40 грузчиков, 10 кладовщиков и 5 операторов погрузчиков для расширения склада",
                   result: "Увеличение оборота на 60%, сокращение времени обработки",
                   tech: ["Грузчики", "Кладовщики", "Операторы"]
-                },
-                {
-                  title: "Строительная компания",
-                  company: "СтройТех",
-                  description: "Сформировали бригаду из 20 монтажников, 8 сварщиков и 5 крановщиков для объекта",
-                  result: "Сдача объекта на 2 недели раньше срока",
-                  tech: ["Монтажники", "Сварщики", "Крановщики"]
                 }
               ].map((caseItem, index) => (
                 <Card key={index} className="p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+                  {caseItem.image && (
+                    <div className="mb-6 -mx-8 -mt-8">
+                      <img 
+                        src={caseItem.image} 
+                        alt={caseItem.title}
+                        className="w-full h-64 object-cover rounded-t-lg"
+                      />
+                    </div>
+                  )}
                   <div className="mb-4">
                     <div className="text-sm font-semibold text-primary mb-2">{caseItem.company}</div>
                     <h3 className="text-2xl font-bold mb-3">{caseItem.title}</h3>
