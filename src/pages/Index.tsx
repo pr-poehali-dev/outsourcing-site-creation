@@ -225,8 +225,8 @@ const Index = () => {
               <Card className="p-8 text-center">
                 <Icon name="Phone" className="mx-auto mb-4 text-primary" size={32} />
                 <div className="text-lg font-semibold mb-2">Телефон</div>
-                <a href="tel:+79991645815" className="text-muted-foreground hover:text-primary transition-colors">
-                  +7 (999) 164-58-15
+                <a href="tel:+79991645830" className="text-muted-foreground hover:text-primary transition-colors">
+                  +7 (999) 164-58-30
                 </a>
               </Card>
               <Card className="p-8 text-center">
