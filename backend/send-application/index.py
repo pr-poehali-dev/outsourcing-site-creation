@@ -62,7 +62,7 @@ def send_email(application: ApplicationRequest) -> bool:
     try:
         logger.info(f'Connecting to SMTP: {smtp_host}:{smtp_port}')
         with smtplib.SMTP(smtp_host, smtp_port, timeout=10) as server:
-            server.set_debuglevel(1)
+            server.set_debuglevel(0)
             logger.info('Starting TLS...')
             server.starttls()
             logger.info(f'Logging in as {smtp_user}...')
