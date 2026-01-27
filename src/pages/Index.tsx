@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import CandidateForm from "@/components/CandidateForm";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -294,7 +295,20 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contact" className="py-20 px-6">
+        <section className="py-20 px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Откликнуться на вакансию</h2>
+              <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+              <p className="text-xl text-muted-foreground">
+                Заполните форму и мы свяжемся с вами в ближайшее время
+              </p>
+            </div>
+            <CandidateForm />
+          </div>
+        </section>
+
+        <section id="contact" className="py-20 px-6 bg-card">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Контакты</h2>
