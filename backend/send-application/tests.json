@@ -1,16 +1,16 @@
 {
   "tests": [
     {
-      "name": "Успешная отправка заявки",
+      "name": "Тестовая заявка 1 - Стропальщик",
       "method": "POST",
       "path": "/",
       "body": {
-        "name": "Иван Петров",
-        "email": "test@example.com",
-        "phone": "+7 900 123-45-67",
-        "position": "Оператор станка с ЧПУ",
+        "name": "Алексей Смирнов",
+        "email": "smirnov.test@example.com",
+        "phone": "+7 917 555-11-22",
+        "position": "Стропальщик",
         "experience": "3-5 лет",
-        "message": "Хочу работать у вас"
+        "message": "Тестовое сообщение - проверка отправки на новую почту PTK.staffing.OK@yandex.ru"
       },
       "expectedStatus": 200,
       "expectedBody": {
@@ -20,15 +20,16 @@
       "bodyMatcher": "partial"
     },
     {
-      "name": "Заявка без сообщения",
+      "name": "Тестовая заявка 2 - Сварщик",
       "method": "POST",
       "path": "/",
       "body": {
-        "name": "Петр Иванов",
-        "email": "petr@example.com",
-        "phone": "+7 911 222-33-44",
-        "position": "Слесарь",
-        "experience": "Более 5 лет"
+        "name": "Дмитрий Кузнецов",
+        "email": "kuznetsov.test@example.com",
+        "phone": "+7 919 777-88-99",
+        "position": "Сварщик",
+        "experience": "Более 5 лет",
+        "message": "Ещё одна тестовая заявка для проверки работы формы"
       },
       "expectedStatus": 200,
       "expectedBody": {
