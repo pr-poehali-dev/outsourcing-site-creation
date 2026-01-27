@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import Icon from "@/components/ui/icon";
 
@@ -123,22 +122,20 @@ const CandidateForm = () => {
 
         <div className="space-y-2">
           <Label htmlFor="experience">Опыт работы *</Label>
-          <Select
+          <select
+            id="experience"
             required
             value={formData.experience}
-            onValueChange={(value) => setFormData({ ...formData, experience: value })}
+            onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <SelectTrigger id="experience">
-              <SelectValue placeholder="Выберите опыт работы" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Без опыта">Без опыта</SelectItem>
-              <SelectItem value="До 1 года">До 1 года</SelectItem>
-              <SelectItem value="1-3 года">1-3 года</SelectItem>
-              <SelectItem value="3-5 лет">3-5 лет</SelectItem>
-              <SelectItem value="Более 5 лет">Более 5 лет</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="">Выберите опыт работы</option>
+            <option value="Без опыта">Без опыта</option>
+            <option value="До 1 года">До 1 года</option>
+            <option value="1-3 года">1-3 года</option>
+            <option value="3-5 лет">3-5 лет</option>
+            <option value="Более 5 лет">Более 5 лет</option>
+          </select>
         </div>
 
         <div className="space-y-2">
