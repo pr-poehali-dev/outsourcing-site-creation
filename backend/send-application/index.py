@@ -1,9 +1,13 @@
 import json
 import os
 import smtplib
+import logging
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pydantic import BaseModel, EmailStr, Field
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 
 class ApplicationRequest(BaseModel):
@@ -54,10 +58,23 @@ def send_email(application: ApplicationRequest) -> bool:
     html_part = MIMEText(html_body, 'html')
     msg.attach(html_part)
     
-    with smtplib.SMTP(smtp_host, smtp_port) as server:
-        server.starttls()
-        server.login(smtp_user, smtp_password)
-        server.send_message(msg)
+    try:
+        logger.info(f'Connecting to SMTP: {smtp_host}:{smtp_port}')
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=10) as server:
+            server.set_debuglevel(1)
+            logger.info('Starting TLS...')
+            server.starttls()
+            logger.info(f'Logging in as {smtp_user}...')
+            server.login(smtp_user, smtp_password)
+            logger.info('Sending email...')
+            server.send_message(msg)
+            logger.info('Email sent successfully!')
+    except smtplib.SMTPAuthenticationError as e:
+        logger.error(f'SMTP Auth Error: {e}')
+        raise ValueError(f'Ошибка аутентификации SMTP. Проверьте пароль приложения в настройках Яндекса')
+    except Exception as e:
+        logger.error(f'SMTP Error: {type(e).__name__}: {e}')
+        raise
     
     return True
 
