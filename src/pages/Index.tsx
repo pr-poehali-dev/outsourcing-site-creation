@@ -27,6 +27,9 @@ const Index = () => {
               <button onClick={() => scrollToSection('cases')} className="text-sm font-medium hover:text-primary transition-colors">
                 Кейсы
               </button>
+              <button onClick={() => scrollToSection('vacancies')} className="text-sm font-medium hover:text-primary transition-colors">
+                Вакансии
+              </button>
               <button onClick={() => scrollToSection('contact')} className="text-sm font-medium hover:text-primary transition-colors">
                 Контакты
               </button>
@@ -202,6 +205,98 @@ const Index = () => {
                       </span>
                     ))}
                   </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="vacancies" className="py-20 px-6 bg-card">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Вакансии для соискателей</h2>
+              <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Присоединяйтесь к нашей команде! Актуальные вакансии на производственных предприятиях
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Оператор станков с ЧПУ",
+                  company: "Машиностроительный завод",
+                  location: "Москва",
+                  salary: "от 70 000 ₽",
+                  type: "Полная занятость",
+                  requirements: ["Опыт работы от 1 года", "Умение читать чертежи", "Знание G-кодов"],
+                  icon: "Settings"
+                },
+                {
+                  title: "Слесарь-сборщик",
+                  company: "Завод металлоконструкций",
+                  location: "Санкт-Петербург",
+                  salary: "от 60 000 ₽",
+                  type: "Полная занятость",
+                  requirements: ["Опыт от 6 месяцев", "Умение работать с инструментом", "Внимательность"],
+                  icon: "Wrench"
+                },
+                {
+                  title: "Контролёр качества",
+                  company: "Пищевое производство",
+                  location: "Казань",
+                  salary: "от 50 000 ₽",
+                  type: "Сменный график",
+                  requirements: ["Ответственность", "Внимание к деталям", "Опыт приветствуется"],
+                  icon: "ClipboardCheck"
+                },
+                {
+                  title: "Оператор погрузчика",
+                  company: "Логистический центр",
+                  location: "Нижний Новгород",
+                  salary: "от 65 000 ₽",
+                  type: "Полная занятость",
+                  requirements: ["Права на погрузчик", "Опыт от 1 года", "Ответственность"],
+                  icon: "Package"
+                }
+              ].map((vacancy, index) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name={vacancy.icon} className="text-primary" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold mb-1">{vacancy.title}</h3>
+                      <p className="text-sm text-muted-foreground">{vacancy.company}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Icon name="MapPin" size={16} className="text-muted-foreground" />
+                      <span>{vacancy.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Icon name="Wallet" size={16} className="text-muted-foreground" />
+                      <span className="font-semibold text-primary">{vacancy.salary}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Icon name="Clock" size={16} className="text-muted-foreground" />
+                      <span>{vacancy.type}</span>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <p className="text-sm font-medium mb-2">Требования:</p>
+                    <ul className="space-y-1">
+                      {vacancy.requirements.map((req, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <Icon name="Check" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                          <span>{req}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Button className="w-full" onClick={() => scrollToSection('contact')}>
+                    Откликнуться
+                  </Button>
                 </Card>
               ))}
             </div>
