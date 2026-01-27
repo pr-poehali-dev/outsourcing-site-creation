@@ -34,6 +34,7 @@ def send_email(application: ApplicationRequest) -> bool:
     msg['Subject'] = f'Новая заявка от кандидата: {application.name}'
     msg['From'] = smtp_user
     msg['To'] = smtp_user
+    logger.info(f'Preparing email from {smtp_user} to {smtp_user}')
     
     html_body = f"""
     <html>
