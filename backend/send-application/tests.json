@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Успешная отправка заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "email": "test@example.com",
+        "phone": "+7 900 123-45-67",
+        "position": "Оператор станка с ЧПУ",
+        "experience": "3-5 лет",
+        "message": "Хочу работать у вас"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Заявка без сообщения",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Петр Иванов",
+        "email": "petr@example.com",
+        "phone": "+7 911 222-33-44",
+        "position": "Слесарь",
+        "experience": "Более 5 лет"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
