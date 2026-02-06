@@ -135,6 +135,34 @@ const Index = () => {
                   </div>
                 ))}
               </div>
+
+              <div className="grid md:grid-cols-3 gap-8 pt-12">
+                {[
+                  {
+                    icon: "Users",
+                    title: "Профессиональная команда",
+                    description: "Наши рекрутеры — это высококвалифицированные специалисты с глубокими знаниями рынка труда и многолетним опытом в подборе персонала. Мы постоянно развиваемся, чтобы предлагать вам лучшие решения."
+                  },
+                  {
+                    icon: "Building2",
+                    title: "Опыт в различных отраслях",
+                    description: "Мы успешно работаем с компаниями из самых разных секторов экономики, понимая специфику каждой отрасли и адаптируя наши стратегии подбора под уникальные требования клиентов."
+                  },
+                  {
+                    icon: "Sparkles",
+                    title: "Современные методы подбора",
+                    description: "Используем передовые методики и инструменты для поиска, оценки и отбора кандидатов, что позволяет нам оперативно находить идеальных сотрудников для вашей команды."
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="p-6 bg-background border-primary/10">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name={item.icon} className="text-primary" size={24} />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-3 text-foreground">{item.title}</h3>
+                    <p className="text-sm leading-relaxed">{item.description}</p>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
