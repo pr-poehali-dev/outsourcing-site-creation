@@ -25,6 +25,9 @@ const Index = () => {
               <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-primary transition-colors">
                 О компании
               </button>
+              <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-primary transition-colors">
+                Наши услуги
+              </button>
               <button onClick={() => scrollToSection('cases')} className="text-sm font-medium hover:text-primary transition-colors">
                 Кейсы
               </button>
@@ -167,7 +170,51 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="cases" className="py-20 px-6 bg-card">
+        <section id="services" className="py-20 px-6 bg-card">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Наши услуги</h2>
+              <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Комплексный подход к подбору
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: "Users",
+                  title: "Подбор линейного и административного персонала",
+                  description: "Находим квалифицированных сотрудников для базовых и вспомогательных позиций, обеспечивая стабильную работу вашего предприятия."
+                },
+                {
+                  icon: "Target",
+                  title: "Закрытие вакансий любой сложности",
+                  description: "Беремся за самые неординарные и требовательные вакансии, используя наши обширные ресурсы и экспертные знания для поиска уникальных специалистов."
+                },
+                {
+                  icon: "TrendingUp",
+                  title: "Массовый подбор",
+                  description: "Организуем эффективный процесс привлечения большого количества сотрудников в кратчайшие сроки, сохраняя при этом высокие стандарты качества."
+                },
+                {
+                  icon: "ClipboardCheck",
+                  title: "Оценка и тестирование кандидатов",
+                  description: "Проводим всестороннюю оценку профессиональных навыков, личностных качеств и потенциала кандидатов с помощью современных методов тестирования."
+                }
+              ].map((item, index) => (
+                <Card key={index} className="p-8 bg-background border-primary/10 hover:shadow-lg transition-shadow">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name={item.icon} className="text-primary" size={28} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="cases" className="py-20 px-6">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Наши кейсы</h2>
