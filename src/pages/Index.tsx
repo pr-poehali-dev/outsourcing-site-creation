@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 import CandidateForm from "@/components/CandidateForm";
 
@@ -211,6 +212,170 @@ const Index = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="advantages" className="py-20 px-6">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Преимущества аутстаффинга</h2>
+              <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Почему компании выбирают аутстаффинг персонала
+              </p>
+            </div>
+            <Tabs defaultValue="cost" className="w-full">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full h-auto mb-10 gap-1 bg-muted p-1">
+                <TabsTrigger value="cost" className="flex items-center gap-2 py-3 text-sm font-medium">
+                  <Icon name="Wallet" size={18} />
+                  <span>Экономия</span>
+                </TabsTrigger>
+                <TabsTrigger value="flexibility" className="flex items-center gap-2 py-3 text-sm font-medium">
+                  <Icon name="Zap" size={18} />
+                  <span>Гибкость</span>
+                </TabsTrigger>
+                <TabsTrigger value="risk" className="flex items-center gap-2 py-3 text-sm font-medium">
+                  <Icon name="ShieldCheck" size={18} />
+                  <span>Снижение рисков</span>
+                </TabsTrigger>
+                <TabsTrigger value="focus" className="flex items-center gap-2 py-3 text-sm font-medium">
+                  <Icon name="Target" size={18} />
+                  <span>Фокус на бизнесе</span>
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="cost">
+                <Card className="p-10 border-primary/20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Icon name="Wallet" className="text-primary" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4">Экономия бюджета</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                        Аутстаффинг позволяет существенно сократить расходы на подбор, оформление и администрирование персонала. Вы платите только за реально отработанное время.
+                      </p>
+                      <ul className="space-y-3">
+                        {[
+                          "Нет затрат на рекрутинг и HR-отдел",
+                          "Отсутствие расходов на обучение",
+                          "Оптимизация налоговой нагрузки",
+                          "Снижение административных издержек до 30%"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-sm">
+                            <Icon name="CircleCheck" className="text-primary flex-shrink-0" size={18} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-primary/5 rounded-2xl p-8 text-center">
+                      <div className="text-6xl font-bold text-primary mb-2">до 30%</div>
+                      <div className="text-lg text-muted-foreground">экономия на HR-процессах</div>
+                    </div>
+                  </div>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="flexibility">
+                <Card className="p-10 border-primary/20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Icon name="Zap" className="text-primary" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4">Максимальная гибкость</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                        Масштабируйте численность персонала под текущие задачи: наращивайте команду в пиковые периоды и сокращайте в межсезонье без лишних процедур.
+                      </p>
+                      <ul className="space-y-3">
+                        {[
+                          "Быстрое увеличение штата за 3–5 дней",
+                          "Сезонное масштабирование без ограничений",
+                          "Подбор под любой график и сменность",
+                          "Оперативная замена сотрудников"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-sm">
+                            <Icon name="CircleCheck" className="text-primary flex-shrink-0" size={18} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-primary/5 rounded-2xl p-8 text-center">
+                      <div className="text-6xl font-bold text-primary mb-2">3–5</div>
+                      <div className="text-lg text-muted-foreground">дней на комплектацию смены</div>
+                    </div>
+                  </div>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="risk">
+                <Card className="p-10 border-primary/20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Icon name="ShieldCheck" className="text-primary" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4">Снижение рисков</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                        Все кадровые, юридические и трудовые риски берём на себя. Вы избавлены от трудовых споров, проверок и штрафов по трудовому законодательству.
+                      </p>
+                      <ul className="space-y-3">
+                        {[
+                          "Полное соблюдение трудового законодательства",
+                          "Защита от трудовых споров и судебных исков",
+                          "Мы — официальный работодатель для персонала",
+                          "Страхование на весь период работы"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-sm">
+                            <Icon name="CircleCheck" className="text-primary flex-shrink-0" size={18} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-primary/5 rounded-2xl p-8 text-center">
+                      <div className="text-6xl font-bold text-primary mb-2">0</div>
+                      <div className="text-lg text-muted-foreground">трудовых споров у наших клиентов</div>
+                    </div>
+                  </div>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="focus">
+                <Card className="p-10 border-primary/20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Icon name="Target" className="text-primary" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4">Фокус на основном бизнесе</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                        Передайте рутинные HR-задачи профессионалам. Ваши менеджеры занимаются производством и развитием, пока мы обеспечиваем нужных людей в нужное время.
+                      </p>
+                      <ul className="space-y-3">
+                        {[
+                          "Освобождение от HR-рутины для руководства",
+                          "Больше времени на стратегические задачи",
+                          "Профессиональное управление персоналом",
+                          "Единая точка контакта для всех кадровых вопросов"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-sm">
+                            <Icon name="CircleCheck" className="text-primary flex-shrink-0" size={18} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-primary/5 rounded-2xl p-8 text-center">
+                      <div className="text-6xl font-bold text-primary mb-2">100%</div>
+                      <div className="text-lg text-muted-foreground">фокус на вашем производстве</div>
+                    </div>
+                  </div>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
 
